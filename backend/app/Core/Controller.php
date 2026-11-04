@@ -26,6 +26,8 @@ abstract class Controller
         return json_decode(file_get_contents('php://input'), true) ?? [];
     }
 
+
+
     #[NoReturn]
     protected function error(string $message, int $status = 400, array $data = []): void
     {

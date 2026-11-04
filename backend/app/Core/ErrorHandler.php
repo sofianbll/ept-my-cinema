@@ -9,6 +9,9 @@ class ErrorHandler
 {
 
 
+    /**
+     * @throws \JsonException
+     */
     #[NoReturn]
     public static function handle(\Throwable $e): void
     {
@@ -36,9 +39,9 @@ class ErrorHandler
                 'file'  => $e->getFile(),
                 'line'  => $e->getLine(),
                 'trace' => $e->getTraceAsString()
-            ]);
+            ], JSON_THROW_ON_ERROR);
         } else {
-            echo json_encode([ 'error' => $code === 404 ? 'Not Found' : 'Internal Server Error' ]);
+            echo json_encode([ 'error' => $code === 404 ? 'Not Found' : 'Internal Server Error' ], JSON_THROW_ON_ERROR);
         }
         exit();
     }

@@ -9,6 +9,7 @@ use JetBrains\PhpStorm\NoReturn;
 
 class MoviesController extends Controller
 {
+
     #[NoReturn]
     public function list(): void // GET //
     {

@@ -5,6 +5,7 @@ namespace App;
 use App\Core\ErrorHandler;
 use App\Core\Router;
 use App\Controllers\HomeController;
+use App\Models\Movies;
 use Dotenv\Dotenv;
 
 class App
@@ -28,3 +29,4 @@ class App
         new Router();
     }
 }
+
